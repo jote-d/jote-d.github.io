@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Analytics Data API v1 Pivot Report Demo</title>
+  <meta charset='utf-8' />
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css"
+        href="pretty.css">
+</head>
+<body>
+<h1>Google Analytics Data API v1 Pivot Report Demo</h1>
+
+Check out the <a href="https://github.com/googleanalytics/analytics-data-javascript-examples/tree/master/samples/run_pivot_report">GitHub repository</a>
+to download the demo sources and see deployment instructions.
+
+<p>This application demonstrates how to build a
+  <a href="https://developers.google.com/analytics/devguides/reporting/data/v1/pivots">pivot report</a>
+  using the <a href="https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/properties/runPivotReport">runPivotReport</a>
+  method of the <a href="https://developers.google.com/analytics/devguides/reporting/data/v1">Google Analytics Data API v1</a>
+  and visualize the result using JavaScript.</p>
+
+<p>The API call builds a pivot report with <b>country</b>, <b>language</b> and <b>browser</b>
+  pivots, displaying the number of sessions for the specified date range for each
+  pivot column.</p>
+
+<p>Click "Authorize" button to start the OAuth2 flow and run the query.</p>
+
+<p>When running this demo using your own domain, make sure to edit
+  the <b>run_pivot_report.js</b> file and replace the <b>clientId</b> variable with
+  your OAuth2 client id.</p>
+
+<p>Google Analytics 4 <a href="https://developers.google.com/analytics/devguides/reporting/data/v1/property-id">Property ID</a>:</p> <input id="property-id">
+<p>
+<button id="authorize-button">Authorize</button>
+<button id="run-query-button" style="display: none;">Execute query</button>
+<button id="signout-button" style="display: none;">Sign Out</button>
+</p>
+
+<div id="content">
+  <table id="result"  border="1" cellpadding="2">
+  </table>
+
+  <pre id="error"></pre>
+  <pre id="query"></pre>
+</div>
+
+<script src="run_pivot_report.js"></script>
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+</body>
+</html>
